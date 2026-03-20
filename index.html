@@ -899,6 +899,20 @@
       section { padding: 60px 18px; }
       .cta-box { padding: 40px 22px; }
     }
+
+    /* ── Mobile-first promo banner ── */
+    @media (max-width: 640px) {
+      .promo-banner { padding: 24px 18px !important; }
+      .promo-banner h3 { font-size: 1.4rem !important; }
+      .promo-cost-grid { grid-template-columns: 1fr !important; }
+      .promo-plan-tabs { flex-direction: column !important; align-items: stretch !important; }
+      .promo-plan-tab { text-align: center; }
+      .promo-estimates-grid { grid-template-columns: 1fr 1fr !important; }
+      .promo-bottom-badges { font-size: 0.78rem !important; flex-direction: column !important; gap: 8px !important; text-align: center; }
+    }
+    @media (max-width: 380px) {
+      .promo-estimates-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -1102,7 +1116,7 @@
     <div class="divider"></div>
 
     <!-- 🔥 LAUNCH PROMO BANNER -->
-    <div style="
+    <div class="promo-banner" style="
       background: linear-gradient(135deg, #1a0a00 0%, #3d1c00 50%, #1a0a00 100%);
       border: 2px solid #d4a017;
       border-radius: 16px;
@@ -1128,62 +1142,62 @@
         padding: 4px 14px;
         border-radius: 20px;
         margin-bottom: 16px;
-      ">🔥 Oferta de Lanzamiento — Solo clientes fundadores</div>
+      ">🔥 Founder's Launch Offer — Limited Spots</div>
 
       <h3 style="font-size: 1.9rem; font-weight: 800; margin: 0 0 8px; color: #fff;">
         Instala Eko por <span style="color: #d4a017;">$500</span> — y paga solo lo que usas
       </h3>
       <p style="color: #aaa; font-size: 1rem; margin: 0 0 28px; max-width: 580px; margin-left: auto; margin-right: auto;">
-        Sin mensualidad fija. Sin contratos. Solo el costo real de las llamadas + tu plan de Claude. 
-        Perfecto para salones que quieren probar la IA sin riesgo.
+        No monthly fees. No contracts. Just the real cost of calls + your Claude plan.
+        Perfect for salons that want to try AI without the risk.
       </p>
 
       <!-- Cost breakdown -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; text-align: left;">
+      <div class="promo-cost-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; text-align: left;">
         
         <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
-          <div style="color: #d4a017; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Una sola vez</div>
+          <div style="color: #d4a017; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">One-Time</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$500</div>
-          <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">Instalación + configuración completa</div>
+          <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">Full setup &amp; configuration included</div>
         </div>
 
         <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
           <div style="color: #d4a017; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Claude (IA)</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$20–$100<span style="font-size: 1rem; font-weight: 400; color: #888;">/mes</span></div>
-          <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">Plan Pro o Max — uso ilimitado, sin cobro por tokens</div>
+          <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">Pro or Max plan — unlimited use, no per-token billing</div>
         </div>
 
         <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
           <div style="color: #d4a017; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">VAPI (llamadas)</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$0.05<span style="font-size: 1rem; font-weight: 400; color: #888;">/min</span></div>
-          <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">Solo pagas las llamadas reales</div>
+          <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">You only pay for actual calls made</div>
         </div>
 
       </div>
 
       <!-- Estimados por llamadas -->
       <!-- Plan selector tabs -->
-      <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+      <div class="promo-plan-tabs" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
         <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(212,160,23,0.3); border-radius: 8px; padding: 10px 20px; text-align: center;">
           <div style="color: #d4a017; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Claude Pro</div>
           <div style="color: #fff; font-size: 1.1rem; font-weight: 800;">$20<span style="color:#888; font-size:0.8rem;">/mes</span></div>
-          <div style="color: #666; font-size: 0.7rem;">Uso ilimitado · sin cobro por tokens</div>
+          <div style="color: #666; font-size: 0.7rem;">Unlimited · no per-token billing</div>
         </div>
         <div style="background: rgba(212,160,23,0.1); border: 1px solid #d4a017; border-radius: 8px; padding: 10px 20px; text-align: center;">
           <div style="color: #d4a017; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Claude Max ⭐</div>
           <div style="color: #fff; font-size: 1.1rem; font-weight: 800;">$100<span style="color:#888; font-size:0.8rem;">/mes</span></div>
-          <div style="color: #666; font-size: 0.7rem;">5× más uso · recomendado salones activos</div>
+          <div style="color: #666; font-size: 0.7rem;">5× more usage · recommended for busy salons</div>
         </div>
       </div>
 
       <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 24px; margin-bottom: 24px; text-align: left;">
         <div style="color: #d4a017; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; text-align: center;">
-          📊 ¿Cuánto pagarías al mes? — Estimados reales
+          📊 How much would you pay per month? — Real estimates
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px;">
+        <div class="promo-estimates-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px;">
           
           <div style="background: rgba(255,255,255,0.04); border-radius: 10px; padding: 16px; text-align: center;">
-            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Salón tranquilo</div>
+            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Quiet Salon</div>
             <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~50 llamadas/mes</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$28</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
@@ -1193,7 +1207,7 @@
 
           <div style="background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.25); border-radius: 10px; padding: 16px; text-align: center;">
             <div style="font-size: 0.68rem; color: #d4a017; font-weight: 700; margin-bottom: 4px;">⭐ MÁS COMÚN</div>
-            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Salón activo</div>
+            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Active Salon</div>
             <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~150 llamadas/mes</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$43</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
@@ -1202,7 +1216,7 @@
           </div>
 
           <div style="background: rgba(255,255,255,0.04); border-radius: 10px; padding: 16px; text-align: center;">
-            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Salón ocupado</div>
+            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Busy Salon</div>
             <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~300 llamadas/mes</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$65</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
@@ -1211,7 +1225,7 @@
           </div>
 
           <div style="background: rgba(255,255,255,0.04); border-radius: 10px; padding: 16px; text-align: center;">
-            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Salón premium</div>
+            <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Premium Salon</div>
             <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~500 llamadas/mes</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$175</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
@@ -1221,20 +1235,20 @@
 
         </div>
         <div style="text-align: center; margin-top: 16px; color: #555; font-size: 0.72rem; line-height: 1.6;">
-          * Claude Pro/Max: plan directo con Anthropic, sin cobro por tokens ni límite de mensajes.<br>
-          * VAPI: $0.05/min de llamada (incluye voz, IA y transcripción). Promedio estimado: 3 min/llamada.<br>
-          * Tú eres dueño de tu cuenta — transparencia total, sin sorpresas.
+          * Claude Pro/Max: direct plan with Anthropic — unlimited messages, no per-token billing.<br>
+          * VAPI: $0.05/min per call (includes voice, AI &amp; transcription). Avg. estimated call: 3 min.<br>
+          * You own your accounts — full transparency, no hidden costs.
         </div>
       </div>
 
-      <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
-        <div style="color: #aaa; font-size: 0.85rem;">✓ Sin contrato mensual &nbsp; ✓ Sin setup fees ocultos &nbsp; ✓ Cancela cuando quieras</div>
+      <div class="promo-bottom-badges" style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+        <div style="color: #aaa; font-size: 0.85rem;">✓ No monthly contract &nbsp; ✓ No hidden setup fees &nbsp; ✓ Cancel anytime</div>
       </div>
     </div>
 
     <!-- 3 Tiered Plans -->
     <div style="text-align:center; margin-bottom: 24px;">
-      <p style="color: #888; font-size: 0.9rem;">¿Prefieres un plan todo incluido? También tenemos opciones fijas:</p>
+      <p style="color: #888; font-size: 0.9rem;">Prefer an all-inclusive plan? We also offer fixed monthly packages:</p>
     </div>
     <div class="plans-grid">
 
