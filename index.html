@@ -891,19 +891,112 @@
     .stat-desc { font-size: .8rem; color: var(--muted); }
 
     /* ─────────────────────────────
-       RESPONSIVE
+       RESPONSIVE — Tablet (481–768px)
     ───────────────────────────── */
-    @media (max-width: 480px) {
-      .nav { padding: 14px 18px; }
-      .hero { padding: 100px 18px 50px; }
-      section { padding: 60px 18px; }
-      .cta-box { padding: 40px 22px; }
+    @media (max-width: 768px) {
+      section { padding: 60px 20px; }
+      .hero { padding: 90px 20px 50px; }
+      .nav { padding: 14px 20px; }
+      .cta-box { padding: 44px 24px; }
+      .stats-grid { gap: 20px 36px; }
+      .stat-num { font-size: 1.8rem; }
+
+      /* Promo estimates: 2×2 grid on tablet */
+      .promo-estimates-grid { grid-template-columns: 1fr 1fr !important; }
+
+      /* Touch-friendly tap targets */
+      .btn-primary, .btn-outline, .nav-cta, .plan-cta, .contact-pill {
+        min-height: 44px;
+      }
+
+      /* Timeline step dot */
+      .step-dot { width: 48px; height: 48px; font-size: 1rem; }
+      .step { gap: 20px; }
+
+      /* Component visual boxes */
+      .visual-box { max-width: 260px; }
     }
 
-    /* ── Mobile-first promo banner ── */
+    /* ─────────────────────────────
+       RESPONSIVE — Mobile (≤480px)
+    ───────────────────────────── */
+    @media (max-width: 480px) {
+      section { padding: 48px 16px; }
+      .hero { padding: 80px 16px 40px; }
+      .nav { padding: 12px 16px; }
+      .nav-brand span { font-size: .7rem; }
+      .cta-box { padding: 36px 16px; }
+
+      /* Font scaling */
+      h2 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+      h3 { font-size: clamp(1rem, 4vw, 1.4rem); }
+      .hero h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+      .hero-sub { font-size: .9rem; }
+      .section-label { font-size: .68rem; }
+
+      /* Stats bar */
+      .stats-bar { padding: 24px 16px; }
+      .stats-grid { gap: 16px 28px; }
+      .stat-num { font-size: 1.5rem; }
+      .stat-desc { font-size: .72rem; }
+
+      /* Problem cards */
+      .problem-grid { gap: 14px; }
+      .problem-card { padding: 22px 20px; }
+      .problem-impact { padding: 24px 20px; }
+      .problem-impact p { font-size: .92rem; }
+
+      /* Solution components → single column */
+      .solution-component { gap: 28px; margin-bottom: 48px; }
+      .component-card { padding: 28px 22px; }
+      .component-number { font-size: 3.5rem; }
+
+      /* Plans grid already collapses at 860px — verified */
+
+      /* Plan cards */
+      .plan-header { padding: 22px 20px 18px; }
+      .plan-body { padding: 18px 20px; }
+      .plan-footer { padding: 0 20px 20px; }
+      .plan-price { font-size: 1.9rem; }
+
+      /* ROI card */
+      .roi-card { padding: 26px 20px !important; }
+      .roi-item { flex-direction: column; gap: 8px; }
+
+      /* Why grid */
+      .why-card { padding: 24px 20px; }
+
+      /* Timeline */
+      .timeline::before { left: 22px; }
+      .step-dot { width: 44px; height: 44px; font-size: .95rem; }
+      .step { gap: 16px; padding-bottom: 28px; }
+      .step-content { padding: 20px 18px; }
+      .step-content h4 { font-size: .95rem; }
+      .step-content p { font-size: .82rem; }
+
+      /* CTA section */
+      .cta-box h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
+      .contact-pill { padding: 12px 16px; font-size: .82rem; width: 100%; }
+      .contact-options { flex-direction: column; align-items: stretch; }
+
+      /* Footer */
+      footer { padding: 28px 16px; }
+
+      /* Touch-friendly targets */
+      .btn-primary, .btn-outline { padding: 14px 28px; min-height: 48px; }
+      .nav-cta { padding: 10px 20px; min-height: 44px; }
+      .plan-cta { padding: 14px; min-height: 48px; }
+    }
+
+    /* ── Promo banner — Tablet ── */
+    @media (max-width: 768px) {
+      .promo-banner { padding: 28px 22px !important; }
+    }
+
+    /* ── Promo banner — Mobile ── */
     @media (max-width: 640px) {
-      .promo-banner { padding: 24px 18px !important; }
-      .promo-banner h3 { font-size: 1.4rem !important; }
+      .promo-banner { padding: 24px 16px !important; }
+      .promo-banner h3 { font-size: 1.3rem !important; }
       .promo-cost-grid { grid-template-columns: 1fr !important; }
       .promo-plan-tabs { flex-direction: column !important; align-items: stretch !important; }
       .promo-plan-tab { text-align: center; }
@@ -912,6 +1005,7 @@
     }
     @media (max-width: 380px) {
       .promo-estimates-grid { grid-template-columns: 1fr !important; }
+      .promo-banner h3 { font-size: 1.1rem !important; }
     }
   </style>
 </head>
@@ -1145,7 +1239,7 @@
       ">🔥 Founder's Launch Offer — Limited Spots</div>
 
       <h3 style="font-size: 1.9rem; font-weight: 800; margin: 0 0 8px; color: #fff;">
-        Instala Eko por <span style="color: #d4a017;">$500</span> — y paga solo lo que usas
+        Install Eko for <span style="color: #d4a017;">$500</span> — and pay only for what you use
       </h3>
       <p style="color: #aaa; font-size: 1rem; margin: 0 0 28px; max-width: 580px; margin-left: auto; margin-right: auto;">
         No monthly fees. No contracts. Just the real cost of calls + your Claude plan.
@@ -1163,29 +1257,29 @@
 
         <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
           <div style="color: #d4a017; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Claude (IA)</div>
-          <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$20–$100<span style="font-size: 1rem; font-weight: 400; color: #888;">/mes</span></div>
+          <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$20–$100<span style="font-size: 1rem; font-weight: 400; color: #888;">/mo</span></div>
           <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">Pro or Max plan — unlimited use, no per-token billing</div>
         </div>
 
         <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px;">
-          <div style="color: #d4a017; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">VAPI (llamadas)</div>
+          <div style="color: #d4a017; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">VAPI (Calls)</div>
           <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">$0.05<span style="font-size: 1rem; font-weight: 400; color: #888;">/min</span></div>
           <div style="color: #888; font-size: 0.85rem; margin-top: 4px;">You only pay for actual calls made</div>
         </div>
 
       </div>
 
-      <!-- Estimados por llamadas -->
+      <!-- Call estimates -->
       <!-- Plan selector tabs -->
       <div class="promo-plan-tabs" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
         <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(212,160,23,0.3); border-radius: 8px; padding: 10px 20px; text-align: center;">
           <div style="color: #d4a017; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Claude Pro</div>
-          <div style="color: #fff; font-size: 1.1rem; font-weight: 800;">$20<span style="color:#888; font-size:0.8rem;">/mes</span></div>
+          <div style="color: #fff; font-size: 1.1rem; font-weight: 800;">$20<span style="color:#888; font-size:0.8rem;">/mo</span></div>
           <div style="color: #666; font-size: 0.7rem;">Unlimited · no per-token billing</div>
         </div>
         <div style="background: rgba(212,160,23,0.1); border: 1px solid #d4a017; border-radius: 8px; padding: 10px 20px; text-align: center;">
           <div style="color: #d4a017; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Claude Max ⭐</div>
-          <div style="color: #fff; font-size: 1.1rem; font-weight: 800;">$100<span style="color:#888; font-size:0.8rem;">/mes</span></div>
+          <div style="color: #fff; font-size: 1.1rem; font-weight: 800;">$100<span style="color:#888; font-size:0.8rem;">/mo</span></div>
           <div style="color: #666; font-size: 0.7rem;">5× more usage · recommended for busy salons</div>
         </div>
       </div>
@@ -1198,7 +1292,7 @@
           
           <div style="background: rgba(255,255,255,0.04); border-radius: 10px; padding: 16px; text-align: center;">
             <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Quiet Salon</div>
-            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~50 llamadas/mes</div>
+            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~50 calls/mo</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$28</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
               Claude Pro $20<br>+ VAPI $7.50<br><span style="color:#555;">(150 min × $0.05)</span>
@@ -1206,9 +1300,9 @@
           </div>
 
           <div style="background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.25); border-radius: 10px; padding: 16px; text-align: center;">
-            <div style="font-size: 0.68rem; color: #d4a017; font-weight: 700; margin-bottom: 4px;">⭐ MÁS COMÚN</div>
+            <div style="font-size: 0.68rem; color: #d4a017; font-weight: 700; margin-bottom: 4px;">⭐ MOST COMMON</div>
             <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Active Salon</div>
-            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~150 llamadas/mes</div>
+            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~150 calls/mo</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$43</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
               Claude Pro $20<br>+ VAPI $22.50<br><span style="color:#555;">(450 min × $0.05)</span>
@@ -1217,7 +1311,7 @@
 
           <div style="background: rgba(255,255,255,0.04); border-radius: 10px; padding: 16px; text-align: center;">
             <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Busy Salon</div>
-            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~300 llamadas/mes</div>
+            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~300 calls/mo</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$65</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
               Claude Pro $20<br>+ VAPI $45<br><span style="color:#555;">(900 min × $0.05)</span>
@@ -1226,7 +1320,7 @@
 
           <div style="background: rgba(255,255,255,0.04); border-radius: 10px; padding: 16px; text-align: center;">
             <div style="font-size: 0.8rem; color: #ccc; font-weight: 600; margin-bottom: 4px;">Premium Salon</div>
-            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~500 llamadas/mes</div>
+            <div style="font-size: 0.72rem; color: #666; margin-bottom: 10px;">~500 calls/mo</div>
             <div style="font-size: 1.6rem; font-weight: 800; color: #d4a017;">~$175</div>
             <div style="font-size: 0.68rem; color: #666; margin-top: 6px; line-height: 1.5;">
               Claude Max $100<br>+ VAPI $75<br><span style="color:#555;">(1,500 min × $0.05)</span>
